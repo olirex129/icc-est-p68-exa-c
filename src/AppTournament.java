@@ -1,5 +1,10 @@
+import models.*;
+import java.util.Arrays;
+
+import controllers.TournamentController;
 
 public class AppTournament {
+        // sdasdsadasdasd
 
         public static Tournament[] getTournaments() {
                 // Copa Andina = 45
@@ -139,6 +144,24 @@ public class AppTournament {
                  * Aquí debe estar el código para ejecutar la aplicación, utilizando el
                  * TournamentController para mostrar los resultados de cada torneo.
                  */
+
+                Tournament[] torneo = getTournaments();
+                Tournament[] torneoB = getTournaments();
+                for (Tournament tournament : torneo) {
+                        System.out.println(tournament.getTotalStarterPoints());
+                }
+
+                System.out.println("////////");
+
+                TournamentController controller = new TournamentController();
+
+                controller.sortSelectionDesc(torneoB);
+                for (Tournament tournament : torneoB) {
+                        System.out.println(tournament.getTotalStarterPoints());
+                }
+                System.out.println(controller.binarySearchByTotalStarterPointsFilaB(torneoB, 70));
+
+                System.out.println(controller.binarySearchByTotalStarterPointsFilaB(torneoB, 33));
 
         }
 }
